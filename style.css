@@ -192,8 +192,20 @@ section .option_list .option:last-child {
     width: 26px;
     border: 2px solid transparent;
     border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 24px;
+    pointer-events: none;
 }
 
-.option_list .option .icon {
-    
+.option_list .option .icon.tick {
+    color:#008000;
+    border-color: #008000;  
+    background:#d4edda;
+}
+
+.option_list .option .icon.cross {
+    color: #ff6347;
+    border-color: #ff6347;  
+    background:#f8d7da;
 }
