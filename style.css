@@ -161,4 +161,16 @@ button.quit:hover {
 .quiz_box section .option_list {
     padding: 25px 0;
     display: block;
+    font-size: 15px;
+    /* add font sizing to the questions box - increase the font size if needed */
+}
+
+section .option_list .option {
+    background: #f5f5f5;
+    border: 1px solid #d3d3d3;
+    border-radius: 30px;
+    padding: 10px 17px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
 }
