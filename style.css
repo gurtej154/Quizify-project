@@ -173,4 +173,27 @@ section .option_list .option {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+section .option_list .option:hover {
+    color: #d3d3d3;
+    background: #000000;
+    border-color: #d3d3d3;
+}
+section .option_list .option:last-child {
+    margin-bottom: 0px;
+}
+
+.option_list .option .icon {
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
+.option_list .option .icon {
+    
 }
