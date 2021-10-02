@@ -94,6 +94,7 @@ button.quit:hover {
 }
 
 .quiz_box {
+    display: none;
     width: 550px;
     background: #fff;
     border-radius: 5px;
@@ -208,4 +209,47 @@ section .option_list .option:last-child {
     color: #ff6347;
     border-color: #ff6347;  
     background:#f8d7da;
+}
+
+.quiz_box footer {
+    height: 60px;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz_box footer .total_que span {
+    display: flex;
+    user-select: none;
+
+}
+
+footer .total_que span p {
+    font-weight: 1000;
+    padding: 0 5px;
+}
+
+footer .total_que span p:first-child {
+    padding-left: 0px;
+}
+
+footer .next_btn {
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background: #d3d3d3;
+    border-radius: 5px;
+    border: 1px solid #c0c0c0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+footer .next_btn:hover {
+    color:#008000;
+    border: 2px solid #008000;
 }
