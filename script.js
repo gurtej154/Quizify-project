@@ -1,8 +1,8 @@
 // creating functioning buttons witin the quiz
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
-const exit_btn = document.querySelector(".buttons .quit");
-const continue_btn = document.querySelector("buttons .continue");
+const exit_btn = document.querySelector(".quit");
+const continue_btn = document.querySelector(".continue");
 const quiz_box = document.querySelector(".quiz_box")
 
 // when the play button is clicked, the following function occurs
