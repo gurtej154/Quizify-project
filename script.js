@@ -3,6 +3,7 @@ const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = document.querySelector(".buttons .quit");
 const continue_btn = document.querySelector("buttons .continue");
+const quiz_box = document.querySelector(".quiz_box")
 
 // when the play button is clicked, the following function occurs
 start_btn.onclick = ()=> {
@@ -14,4 +15,11 @@ start_btn.onclick = ()=> {
 exit_btn.onclick = ()=> {
     //hides the information section 
     info_box.classList.remove("activeInfo");
+}
+
+// when the continue quizify button is clicked, the following function occurs
+continue_btn.onclick = ()=> {
+    //hides the information section 
+    info_box.classList.remove("activeInfo");
+    quiz_box.classList.add("activeQuiz");
 }
