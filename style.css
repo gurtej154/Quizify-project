@@ -253,3 +253,7 @@ footer .next_btn:hover {
     color:#008000;
     border: 2px solid #008000;
 }
+
+.result_box {
+    background: #fff;
+}
