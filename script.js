@@ -6,5 +6,5 @@ const continue_btn = document.querySelector("buttons .continue");
 
 // when the play button is clicked, the following function occurs
 start_btn.onclick = ()=> {
-    info_box.classList.add("");
+    info_box.classList.add("activeInfo");
 }
