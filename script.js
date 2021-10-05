@@ -27,7 +27,7 @@ continue_btn.onclick = () => {
     quiz_box.classList.add("activeQuiz");
     showQuestions(0);
     queCounter(1);
-    startTimer(59)
+    startTimer()
 }
 
 //When a probable answer is clicked, a alert is given on weather the answer is correct or incorrect
@@ -147,38 +147,39 @@ function optionSelected(answer) {
     if (userAns == correctAns) {
         answer.classList.add("correct")
         console.log("Answer is correct");
-    }else{
+    } else {
         answer.classList.add("incorrect")
         console.log("Answer is wrong")
+        time = time - 10
 
 
         for (let i = 0; i < allOptions; i++) {
-            if(option_list.children[i].textContent == correctAns){
+            if (option_list.children[i].textContent == correctAns) {
                 option_list.children[i].setAttribute("class", "option correct");
 
             }
         }
     }
 
-
-        for (let i = 0; i < allOptions; i++) {
-            option_list.children[i].classList.add("disabled");
-        }
-
+    for (let i = 0; i < allOptions; i++) {
+        option_list.children[i].classList.add("disabled");
     }
 
-function startTimer(time){
+}
+
+var time = 59
+function startTimer() {
     counter = setInterval(timer, 1000);
-    function timer(){
+    function timer() {
         timeCount.textContent = time;
         time--;
     }
 }
 
 
-    // Function to move through each quiz question 
-    function queCounter(index) {
-        const bottom_ques_counter = quiz_box.querySelector(".total_que");
-        let totalQuesCountTag = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
-        bottom_ques_counter.innerHTML = totalQuesCountTag;
-    }
+// Function to move through each quiz question 
+function queCounter(index) {
+    const bottom_ques_counter = quiz_box.querySelector(".total_que");
+    let totalQuesCountTag = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
+    bottom_ques_counter.innerHTML = totalQuesCountTag;
+}
