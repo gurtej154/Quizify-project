@@ -4,6 +4,7 @@ const info_box = document.querySelector(".info_box");
 const exit_btn = document.querySelector(".quit");
 const continue_btn = document.querySelector(".continue");
 const quiz_box = document.querySelector(".quiz_box")
+const timeCount = quiz_box.querySelector(".timer .timer_sec");
 
 const option_list = document.querySelector(".option_list");
 
@@ -26,6 +27,7 @@ continue_btn.onclick = () => {
     quiz_box.classList.add("activeQuiz");
     showQuestions(0);
     queCounter(1);
+    startTimer(59)
 }
 
 //When a probable answer is clicked, a alert is given on weather the answer is correct or incorrect
@@ -102,6 +104,7 @@ var questions = [
 
 let que_count = 0;
 let que_numb = 1;
+let counter;
 
 
 
@@ -164,6 +167,13 @@ function optionSelected(answer) {
 
     }
 
+function startTimer(time){
+    counter = setInterval(timer, 1000);
+    function timer(){
+        timeCount.textContent = time;
+        time--;
+    }
+}
 
 
     // Function to move through each quiz question 
