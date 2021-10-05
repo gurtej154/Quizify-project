@@ -22,6 +22,7 @@ continue_btn.onclick = ()=> {
     //hides the information section 
     info_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
+    showQuestions(0);
 }
 
 //When a probable answer is clicked, a alert is given on weather the answer is correct or incorrect
@@ -79,4 +80,17 @@ var letQuestions = [{
         correctAnswer: "alert('Hello World');"
     }]
 
-    
+    let que_count = 0;
+
+    // Function to allow questions to display in the input screen
+    function showQuestions(index){
+        const que_text = document.querySelector(".que_text");
+        const option_list = document.querySelector(".option_list");
+        let que_tag = '<span>'+ letQuestions[index].question +'</span>';
+        let option_tag = '<div clas ="option">'+ letQuestions[index].answers[0] +'<span></span></div>'
+        + '<div class="option"><span></span></div>'
+        + '<div class="option"><span></span></div>'
+        + '<div class="option"><span></span></div>';
+        que_text.innerHTML = que_tag;
+        option_list.innerHTML = option_tag;
+    }
