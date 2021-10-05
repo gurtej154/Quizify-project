@@ -28,6 +28,7 @@ continue_btn.onclick = () => {
     showQuestions(0);
     queCounter(1);
     startTimer()
+    stopTimer(0)
 }
 
 //When a probable answer is clicked, a alert is given on weather the answer is correct or incorrect
@@ -175,7 +176,6 @@ function startTimer() {
         time--;
     }
 }
-
 
 // Function to move through each quiz question 
 function queCounter(index) {
