@@ -5,6 +5,8 @@ const exit_btn = document.querySelector(".quit");
 const continue_btn = document.querySelector(".continue");
 const quiz_box = document.querySelector(".quiz_box")
 
+const option_list = document.querySelector(".option_list");
+
 // when the play button is clicked, the following function occurs
 start_btn.onclick = () => {
     // displays the information section
@@ -119,7 +121,6 @@ next_btn.onclick = () => {
 // Function to allow questions to display in the input screen
 function showQuestions(index) {
     const que_text = document.querySelector(".que_text");
-    const option_list = document.querySelector(".option_list");
     let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
     let option_tag = '<div class ="option">' + questions[index].options[0] + '<span></span></div>'
         + '<div class="option">' + questions[index].options[1] + '<span></span></div>'
@@ -132,7 +133,6 @@ function showQuestions(index) {
     const option = option_list.querySelectorAll(".option");
     for (let i = 0; i < option.length; i++) {
         option[i].setAttribute("onclick", "optionSelected(this)");
-        
     }
 
 }
@@ -140,23 +140,35 @@ function showQuestions(index) {
 function optionSelected(answer) {
     let userAns = answer.textContent;
     let correctAns = questions[que_count].answer;
-    if(userAns == correctAns) {
+    let allOptions = option_list.children.length;
+    if (userAns == correctAns) {
         answer.classList.add("correct")
         console.log("Answer is correct");
     }else{
         answer.classList.add("incorrect")
         console.log("Answer is wrong")
+
+
+        for (let i = 0; i < allOptions; i++) {
+            if(option_list.children[i].textContent == correctAns){
+                option_list.children[i].setAttribute("class", "option correct");
+
+            }
+        }
     }
- 
-}
+
+
+        for (let i = 0; i < allOptions; i++) {
+            option_list.children[i].classList.add("disabled");
+        }
+
+    }
 
 
 
-
-
-// Function to move through each quiz question 
-function queCounter(index) {
-    const bottom_ques_counter = quiz_box.querySelector(".total_que");
-    let totalQuesCountTag = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
-    bottom_ques_counter.innerHTML = totalQuesCountTag;
-}
+    // Function to move through each quiz question 
+    function queCounter(index) {
+        const bottom_ques_counter = quiz_box.querySelector(".total_que");
+        let totalQuesCountTag = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
+        bottom_ques_counter.innerHTML = totalQuesCountTag;
+    }
