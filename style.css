@@ -227,6 +227,18 @@ section .option_list .option:last-child {
     background:#f8d7da;
 }
 
+.option_list .option.correct {
+    color:#008000;
+    border-color: #008000;  
+    background:#d4edda;
+}
+
+.option_list .option.incorrect {
+    color: #ff6347;
+    border-color: #ff6347;  
+    background:#f8d7da;
+}
+
 .quiz_box footer {
     height: 60px;
     width: 100%;
