@@ -5,6 +5,7 @@ const exit_btn = document.querySelector(".quit");
 const continue_btn = document.querySelector(".continue");
 const quiz_box = document.querySelector(".quiz_box")
 const timeCount = quiz_box.querySelector(".timer .timer_sec");
+const timeLine = quiz_box.querySelector("header .time_line");
 
 const option_list = document.querySelector(".option_list");
 
@@ -28,7 +29,7 @@ continue_btn.onclick = () => {
     showQuestions(0);
     queCounter(1);
     startTimer()
-    stopTimer(0)
+    startTimerLine(0);
 }
 
 //When a probable answer is clicked, a alert is given on weather the answer is correct or incorrect
@@ -106,6 +107,7 @@ var questions = [
 let que_count = 0;
 let que_numb = 1;
 let counter;
+let widthValue = 0;
 
 
 
@@ -117,6 +119,10 @@ next_btn.onclick = () => {
         que_numb++;
         showQuestions(que_count);
         queCounter(que_numb);
+        clearInterval(counter)
+        startTimer(timeValue)
+        clearInterval(counterLine);
+        startTimerLin(widthValue);
     } else {
         console.log("Questions completed");
     }
@@ -174,9 +180,25 @@ function startTimer() {
     function timer() {
         timeCount.textContent = time;
         time--;
+        if(time < 9) {
+            let addZero = timeCount.textContent;
+            timeCount.textContent = "0" + addZero;
+        }
         if(time < 0) {
             clearInterval(counter);
             timeCount.textContent = "0"
+        }
+    }
+}
+
+var time = 59
+function startTimerLine(time) {
+    counterLine = setInterval(timer, 59);
+    function timer() {
+        time += 1;
+        timeLine.style.width = time + "px";
+        if(time > 549) {
+            clearInterval(counterLine);
         }
     }
 }
