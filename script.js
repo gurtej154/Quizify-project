@@ -120,9 +120,10 @@ next_btn.onclick = () => {
         showQuestions(que_count);
         queCounter(que_numb);
         clearInterval(counter)
-        startTimer(timeValue)
+        startTimer()
         clearInterval(counterLine);
-        startTimerLin(widthValue);
+        startTimerLine(widthValue);
+        next_btn.style.display = "none";
     } else {
         console.log("Questions completed");
     }
@@ -171,6 +172,7 @@ function optionSelected(answer) {
     for (let i = 0; i < allOptions; i++) {
         option_list.children[i].classList.add("disabled");
     }
+    next_btn.style.display = "block";
 
 }
 
