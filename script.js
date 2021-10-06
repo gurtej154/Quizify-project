@@ -107,6 +107,7 @@ var questions = [
 let que_count = 0;
 let que_numb = 1;
 let counter;
+let counterLine;
 let widthValue = 0;
 let userScore = 0;
 
@@ -116,6 +117,25 @@ const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".restart");
 const quit_quiz = result_box.querySelector(".quit");
+
+restart_quiz.onclick = () => {
+    quiz_box.classList.add("activeQuiz");
+    result_box.classList.remove("activeResult");
+    let que_count = 0;
+    let que_numb = 1;
+    let widthValue = 0;
+    showQuestions(que_count);
+    queCounter(que_numb);
+    clearInterval(counter)
+    startTimer()
+    clearInterval(counterLine);
+    startTimerLine(widthValue);
+    next_btn.style.display = "none";
+}
+
+quit_quiz.onclick = () => {
+    window.location.reload();
+}
 
 next_btn.onclick = () => {
     if (que_count < questions.length - 1) {
@@ -214,13 +234,14 @@ function startTimer() {
         if (time < 0) {
             clearInterval(counter);
             timeCount.textContent = "0"
+            
         }
     }
 }
 
 var time = 59
 function startTimerLine(time) {
-    counterLine = setInterval(timer, 59);
+    counterLine = setInterval(timer, 10);
     function timer() {
         time += 1;
         timeLine.style.width = time + "px";
