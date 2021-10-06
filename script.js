@@ -108,10 +108,14 @@ let que_count = 0;
 let que_numb = 1;
 let counter;
 let widthValue = 0;
+let userScore = 0;
 
 
 
 const next_btn = quiz_box.querySelector(".next_btn");
+const result_box = document.querySelector(".result_box");
+const restart_quiz = result_box.querySelector(".restart");
+const quit_quiz = result_box.querySelector(".quit");
 
 next_btn.onclick = () => {
     if (que_count < questions.length - 1) {
@@ -126,6 +130,7 @@ next_btn.onclick = () => {
         next_btn.style.display = "none";
     } else {
         console.log("Questions completed");
+        showResultBox();
     }
 }
 
@@ -153,6 +158,8 @@ function optionSelected(answer) {
     let correctAns = questions[que_count].answer;
     let allOptions = option_list.children.length;
     if (userAns == correctAns) {
+        userScore += 1;
+        console.log(userScore);
         answer.classList.add("correct")
         console.log("Answer is correct");
     } else {
@@ -175,6 +182,24 @@ function optionSelected(answer) {
     next_btn.style.display = "block";
 
 }
+function showResultBox() {
+    info_box.classList.remove("activeInfo");
+    quiz_box.classList.remove("activeQuiz");
+    result_box.classList.add("activeResult");
+    const scoreText = result_box.querySelector(".score_text");
+    if (userScore > 3) {
+        let scoreTag = '<span>Congrats! You recieved <p>' + userScore + '</p>out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else if (userScore > 1) {
+        let scoreTag = '<span>Good effort, you recieved <p>' + userScore + '</p>out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else {
+        let scoreTag = '<span>Bad luck, you recieved <p>' + userScore + '</p>out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+}
 
 var time = 59
 function startTimer() {
@@ -182,11 +207,11 @@ function startTimer() {
     function timer() {
         timeCount.textContent = time;
         time--;
-        if(time < 9) {
+        if (time < 9) {
             let addZero = timeCount.textContent;
             timeCount.textContent = "0" + addZero;
         }
-        if(time < 0) {
+        if (time < 0) {
             clearInterval(counter);
             timeCount.textContent = "0"
         }
@@ -199,7 +224,7 @@ function startTimerLine(time) {
     function timer() {
         time += 1;
         timeLine.style.width = time + "px";
-        if(time > 549) {
+        if (time > 549) {
             clearInterval(counterLine);
         }
     }

@@ -23,7 +23,8 @@ body {
 }
 
 .info_box.activeInfo,
-.quiz_box.activeQuiz {
+.quiz_box.activeQuiz,
+.result_box.activeResult {
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -290,11 +291,13 @@ footer .next_btn:hover {
     padding: 25px 30px;
     border-radius: 5px;
     display: flex;
+    text-align: center;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    opacity: 0;
     pointer-events: none;
-    /* transform: translate(-50%, -50%) scale(0.5); */
+    transform: translate(-50%, -50%) scale(0.9); 
 }
 
 .result_box .complete_text {
@@ -303,14 +306,33 @@ footer .next_btn:hover {
     margin: 10px 0px;
 }
 
+.result_box .score_text span {
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.score_text span p {
+    font-weight: 600;
+    padding: 0 4px;
+}
+
+.result_box .buttons {
+    display: flex;
+    margin: 20px 0;
+}
+
 .result_box .buttons button {
     margin: 0 10px;
-    height: 45px;
+    height: 40px;
     padding: 0 20px;
+    border: none;
+    outline: none;
     font-size: 18px;
-    font-size: 500;
+    font-weight: 500;
     border-radius: 5px;
+    border: 1px solid #d3d3d3;
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
