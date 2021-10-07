@@ -257,3 +257,38 @@ function queCounter(index) {
     let totalQuesCountTag = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
     bottom_ques_counter.innerHTML = totalQuesCountTag;
 }
+
+//function to save initials and score to local storage
+function saveScore(event){
+    event.preventDefault()
+    //check if user has entered initials
+    var userInitials = saveHighscore.querySelector("#initials").value
+    if(userInitials === "" || userInitials.length > 2){
+        alert("you must enter your initials! eg. JC")
+        return
+    }
+    document.querySelector(".highscore-form").style.display = "none"
+    
+    
+    
+    var initialsArr = [];
+    var scoresArr = [];
+    initialsArr = JSON.parse(localStorage.getItem("initials"));
+    scoresArr = JSON.parse(localStorage.getItem("highscores"));
+    if(initialsArr == null && scoresArr == null){
+        initialsArr = [userInitials];
+        scoresArr = [quizScore];
+    }else{
+        initialsArr.push(userInitials)
+        scoresArr.push(quizScore)
+    }
+    
+
+    
+    localStorage.setItem("initials", JSON.stringify(initialsArr));
+    localStorage.setItem("highscores", JSON.stringify(scoresArr));  
+    
+    document.querySelector(".highscore-link").style.display = "flex"
+
+    userInitials.value = ""
+}

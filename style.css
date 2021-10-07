@@ -12,7 +12,8 @@ body {
 .start_btn,
 .info_box, 
 .quiz_box,
-.result_box {
+.result_box,
+.leader_box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,6 +42,24 @@ body {
     border: none;
     background: #fff;
     cursor: pointer;
+}
+.leader_box {
+    width: 540px;
+    background: #fff;
+    border-radius: 5px;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.leader_box .leader_title {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid #d3d3d3;
+    display: flex;
+    align-items: center;
+    padding: 0 200px;
+    font-size: 20px;
+    font-weight: 1000;
 }
 
 .info_box {
@@ -95,6 +114,17 @@ body {
     font-weight: 600;
     cursor: pointer; 
     /* Add transition element */
+}
+
+a {
+text-decoration: none;
+color: #000000;
+background:#dcdcdc;
+align-items: center;
+margin: auto;
+width: 127px;
+padding: 10px;
+border-radius: 5px;
 }
 
 
@@ -335,4 +365,10 @@ footer .next_btn:hover {
     border: 1px solid #d3d3d3;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.leaderboard_form {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
