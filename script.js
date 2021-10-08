@@ -113,6 +113,7 @@ let userScore = 0;
 
 
 
+
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".restart");
@@ -251,6 +252,9 @@ function startTimerLine(time) {
     }
 }
 
+// Adding current score from quiz to highscores section
+
+
 // Function to move through each quiz question 
 function queCounter(index) {
     const bottom_ques_counter = quiz_box.querySelector(".total_que");
@@ -258,37 +262,4 @@ function queCounter(index) {
     bottom_ques_counter.innerHTML = totalQuesCountTag;
 }
 
-//function to save initials and score to local storage
-function saveScore(event){
-    event.preventDefault()
-    //check if user has entered initials
-    var userInitials = saveHighscore.querySelector("#initials").value
-    if(userInitials === "" || userInitials.length > 2){
-        alert("you must enter your initials! eg. JC")
-        return
-    }
-    document.querySelector(".highscore-form").style.display = "none"
-    
-    
-    
-    var initialsArr = [];
-    var scoresArr = [];
-    initialsArr = JSON.parse(localStorage.getItem("initials"));
-    scoresArr = JSON.parse(localStorage.getItem("highscores"));
-    if(initialsArr == null && scoresArr == null){
-        initialsArr = [userInitials];
-        scoresArr = [quizScore];
-    }else{
-        initialsArr.push(userInitials)
-        scoresArr.push(quizScore)
-    }
-    
 
-    
-    localStorage.setItem("initials", JSON.stringify(initialsArr));
-    localStorage.setItem("highscores", JSON.stringify(scoresArr));  
-    
-    document.querySelector(".highscore-link").style.display = "flex"
-
-    userInitials.value = ""
-}
