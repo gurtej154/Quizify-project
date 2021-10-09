@@ -6,8 +6,10 @@ const continue_btn = document.querySelector(".continue");
 const quiz_box = document.querySelector(".quiz_box")
 const timeCount = quiz_box.querySelector(".timer .timer_sec");
 const timeLine = quiz_box.querySelector("header .time_line");
-
 const option_list = document.querySelector(".option_list");
+
+var submitScore = document.querySelector(".leader_board")
+var userInitials = submitScore.querySelector("#initials")
 
 // when the play button is clicked, the following function occurs
 start_btn.onclick = () => {
@@ -253,7 +255,35 @@ function startTimerLine(time) {
 }
 
 // Adding current score from quiz to highscores section
+function saveScore(event) {
+    event.preventDefault()
 
+    var userInitials = submitScore.querySelector("#initials").value
+    if (userInitials === "" || userInitials.length > 2) {
+        alert("Enter your initials to proceeed, example 'GS'")
+        return
+    }
+    document.querySelector(".leader_board").style.display = "none"
+
+    var initialsArr = [];
+    var scoresArr = [];
+    initialsArr = JSON.parse(localStorage.getItem("initials"));
+    scoresArr = JSON.parse(localStorage.getItem("highscores"));
+    if(initialsArr == null && scoresArr == null) {
+        initals = [userInitials];
+        scoresArr = [userScore];
+    }else{ 
+        initialsArr.push(userInitials)
+        scoresArr.push(userScore)
+    }
+
+    localStorage.setItem("initials", JSON.stringify(initialsArr));
+    localStorage.setItem("highscores", JSON.stringify(scoresArr));
+
+    document.querySelector(".buttons").style.display = "flex"
+    userInitials.value = ""
+
+}
 
 // Function to move through each quiz question 
 function queCounter(index) {
@@ -261,5 +291,3 @@ function queCounter(index) {
     let totalQuesCountTag = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
     bottom_ques_counter.innerHTML = totalQuesCountTag;
 }
-
-
