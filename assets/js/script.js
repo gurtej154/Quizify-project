@@ -120,7 +120,7 @@ let userScore = 0;
 
 
 
-// the variables enable the buttons to activate certain functions 
+// The variables enable the buttons to activate certain functions 
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".restart");
