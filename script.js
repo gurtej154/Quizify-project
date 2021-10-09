@@ -34,6 +34,10 @@ continue_btn.onclick = () => {
     startTimerLine(0);
 }
 
+submitScore.onclick = () => {
+    saveScore();
+}
+
 //When a probable answer is clicked, a alert is given on weather the answer is correct or incorrect
 
 var questions = [
@@ -263,6 +267,7 @@ function saveScore(event) {
         alert("Enter your initials to proceeed, example 'GS'")
         return
     }
+
     document.querySelector(".leader_board").style.display = "none"
 
     var initialsArr = [];
