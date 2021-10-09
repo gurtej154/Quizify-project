@@ -9,7 +9,7 @@ This project enabled myself to understand how Web API’s and third-party API’
 
 
  
-## Table of Contents - Web Portfolio - Gurtej Singh
+## Table of Contents - Quizify - Quiz Project
 
 - [Project](#Project)
 - [Website](#Website)
@@ -52,6 +52,8 @@ Another screenshot, shows the interface of the quiz process.
 ## Website
 
 To access the website of Quizify, please click on the following link: 
+
+https://gurtej154.github.io/Quizify-project/
 
 
 ## License
