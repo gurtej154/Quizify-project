@@ -5,16 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the quiz -->
     <title>Quizify | Coding Quiz</title>
-    <link rel="Stylesheet" href="style.css">
+    <!-- Links to main css file -->
+    <link rel="Stylesheet" href="./assets/css/style.css">
+    <!-- Font add-on from google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    
+    <!-- Initiate's the quiz  -->
     <div class="start_btn"><button>Lets Quizify!</button></div>
 
+    <!-- Showcases the rules and guidelines of the quiz -->
     <div class="info_box">
         <div class="info_title">
             <span>Guideline of Quizify</span>
@@ -39,6 +45,7 @@
         </div>
     </div>
 
+    <!-- Presents the users with a countdown of time and quiz questions -->
     <div class="quiz_box">
         <header>
             <div class="title">Quizify - Challenge Yourself!</div>
@@ -62,28 +69,33 @@
         </footer>
     </div>
 
+    <!-- Notifies the user upon the completion of the quiz -->
     <div class="result_box">
         <div class="complete_text"> You finished Quizify!</div>
         <div class="score_text">
         </div>
 
-<div class="leader_board">
-    <form>
-        <label for="input">Enter Initials</label>
+        <!-- User needs to type initials and recieve their score from quiz -->
+        <div class="leader_board">
+            <form>
+                <label for="input">Enter Initials</label>
                 <input type="text" id="initials" name="initials">
                 <input type="submit" id="submit" value="submit">
-    </form>
-</div>
-
-<div class="highscores_link"><a href="highscores.html" target="_blank">Leader board</a>
-
-        <div class="buttons">
-            <button class="restart">Replay Quizify</button>
-            <button class="quit">Quit Quizify</button>
+            </form>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <!-- stores the final score of the quiz as a leaderboard ranking -->
+        <div class="highscores_link"><a href="./highscores.html" target="_blank">Leader board</a>
+
+            <!-- Allocates options to user once they finish the quiz -->
+            <div class="buttons">
+                <button class="restart">Replay Quizify</button>
+                <button class="quit">Quit Quizify</button>
+            </div>
+        </div>
+
+        <!-- Links to main JavaScript file -->
+        <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

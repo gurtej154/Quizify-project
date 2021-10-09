@@ -1,3 +1,4 @@
+// The highscores section stores the score and displays it in an order
 var highscoresArr = JSON.parse(localStorage.getItem("highscores"));
 var initialsArr = JSON.parse(localStorage.getItem("initials"));
 console.log(initialsArr)
