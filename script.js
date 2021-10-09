@@ -264,7 +264,6 @@ function saveScore(event) {
 
     var userInitials = submitScore.querySelector("#initials").value
     if (userInitials === "" || userInitials.length > 2) {
-        alert("Enter your initials to proceeed, example 'GS'")
         return
     }
 
@@ -288,8 +287,6 @@ function saveScore(event) {
 
     document.querySelector(".buttons").style.display = "flex"
     userInitials.value = ""
-
-    buttons.style.display = "block";
 }
 
 // Function to move through each quiz question 

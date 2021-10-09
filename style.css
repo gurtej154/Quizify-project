@@ -45,21 +45,27 @@ body {
 }
 .leader_box {
     width: 540px;
+    padding: 200px;
     background: #fff;
     border-radius: 5px;
     pointer-events: none;
     transform: translate(-50%, -50%) scale(0.9);
 }
 
-.leader_box .leader_title {
+.leader_box .leader_title h1 {
+    position: absolute;
+    top: 20px;
     height: 60px;
     width: 100%;
-    border-bottom: 1px solid #d3d3d3;
-    display: flex;
-    align-items: center;
-    padding: 0 200px;
     font-size: 20px;
     font-weight: 1000;
+}
+
+.leader_box ul {
+    text-align: center;
+    position: relative;
+    bottom: 130px;
+    font-size: 20px;
 }
 
 .info_box {
@@ -338,7 +344,7 @@ footer .next_btn:hover {
 
 .result_box .score_text span {
     display: flex;
-    margin: 10px 0;
+    margin: 50px 0;
     font-size: 18px;
     font-weight: 500;
 }
@@ -350,7 +356,7 @@ footer .next_btn:hover {
 
 .result_box .buttons {
     display: flex;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .result_box .buttons button {
