@@ -34,8 +34,8 @@ continue_btn.onclick = () => {
     startTimerLine(0);
 }
 
-submitScore.onclick = () => {
-    saveScore();
+submitScore.onclick = (event) => {
+    saveScore(event);
 }
 
 //When a probable answer is clicked, a alert is given on weather the answer is correct or incorrect
@@ -274,10 +274,11 @@ function saveScore(event) {
     var scoresArr = [];
     initialsArr = JSON.parse(localStorage.getItem("initials"));
     scoresArr = JSON.parse(localStorage.getItem("highscores"));
-    if(initialsArr == null && scoresArr == null) {
-        initals = [userInitials];
+    if(initialsArr == null || scoresArr == null) {
+        initialsArr = [userInitials];
         scoresArr = [userScore];
     }else{ 
+        console.log(initialsArr)
         initialsArr.push(userInitials)
         scoresArr.push(userScore)
     }
@@ -288,6 +289,7 @@ function saveScore(event) {
     document.querySelector(".buttons").style.display = "flex"
     userInitials.value = ""
 
+    buttons.style.display = "block";
 }
 
 // Function to move through each quiz question 
