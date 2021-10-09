@@ -39,7 +39,7 @@ THEN the saved events persist
 
 The following is a live-demo of how the quiz works and what Quizify consists of.
 
-![Quizify](/.Quizify.gif)
+![Quizify](./Quizify.gif)
 
 The following screenshot, displays the interface of the starting page of Quizify.
 
@@ -47,7 +47,7 @@ The following screenshot, displays the interface of the starting page of Quizify
 
 Another screenshot, shows the interface of the quiz process. 
 
-![Quizify](./Quizify.png)
+![Quizify](./Quiz.png)
 
 ## Website
 
